@@ -10,7 +10,7 @@ let posts = [
       {
             id: "1",
             title: "My First Blog Post",
-            content: "Welcome! This is a mock post stored directly in the server's memory array to verify our EJS looping configurations."
+            content: "Welcome! This is a mock post ."
       }
 ];
 

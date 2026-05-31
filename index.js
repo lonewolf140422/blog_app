@@ -15,11 +15,11 @@ let posts = [
 ];
 
 app.get('/', (req, res) => {
-      res.render('index', { posts: posts });
+      res.render('index.ejs', { posts: posts });
 });
 
 app.get('/posts/new', (req, res) => {
-      res.render('create');
+      res.render('create.ejs');
 });
 
 app.post('/posts', (req, res) => {
@@ -43,7 +43,7 @@ app.get('/posts/:id/edit', (req, res) => {
             return res.status(404).send("Post not found");
       }
 
-      res.render('edit', { post: targetedPost });
+      res.render('edit.ejs', { post: targetedPost });
 });
 
 app.post('/posts/:id/update', (req, res) => {

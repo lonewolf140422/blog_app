@@ -1,19 +1,21 @@
 {
   "name": "blog_app",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "version": "2.0.0",
+  "description": "A blog community — Express + Neon Postgres + Redis API with a React frontend",
+  "private": true,
   "type": "module",
-  "dependencies": {
-    "ejs": "^5.0.2",
-    "express": "^5.2.1",
-    "middleware": "^1.0.0"
-  }
+  "scripts": {
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "migrate": "npm run migrate --prefix server",
+    "seed": "npm run seed --prefix server",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "dev": "concurrently -n server,client -c cyan,magenta \"npm:dev:server\" \"npm:dev:client\"",
+    "build": "npm run build --prefix client",
+    "start": "npm start --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "license": "ISC"
 }
